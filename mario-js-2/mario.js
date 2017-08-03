@@ -17,6 +17,7 @@ function mySize(){
 
 function drawPyramid(height){
     let resp = printPyramid(height);
+    let brickColor = document.getElementsByTagName("select")[0];
     function printPyramid(height) {
         let marioString = "\u00A0"
         for (let i = 1; i < height; i++) {
@@ -52,15 +53,30 @@ function drawPyramid(height){
         document.getElementById("pyramid2").appendChild(node);
         document.getElementById('pyramid2').appendChild(lineBreak);
     }
-    var removeElement = document.getElementById("construction");
-    removeElement.parentNode.removeChild(removeElement);
+    myColor()
 }
 
 function myColor(){
     let brickColor = document.getElementsByTagName("select")[0];
     brickColor = brickColor.value
-    
-
-
-
+    let brickStatus = document.getElementsByClassName("box");
+    switch(brickColor) {
+    case "blue":
+        for (i = 0; i < brickStatus.length; i++){
+            brickStatus[i].style.backgroundColor = '#00008b';
+            brickStatus[i].style.borderColor = '#008b8b black black #008b8b';
+        }
+        break;
+    case "green":
+     for (i = 0; i < brickStatus.length; i++){
+            brickStatus[i].style.backgroundColor = '#228b22';
+            brickStatus[i].style.borderColor = '#90ee90 black black #90ee90';
+     }    
+        break;
+    default:
+         for (i = 0; i < brickStatus.length; i++){
+            brickStatus[i].style.backgroundColor = '#d2691e';
+            brickStatus[i].style.borderColor = '#deb887 black black #deb887';
+    }
+}
 }
