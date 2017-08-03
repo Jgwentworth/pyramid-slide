@@ -1,16 +1,23 @@
 window.onload = mySize()
 
+let changePyramidColor = document.getElementsByTagName("select")[0];;
+console.log(changePyramidColor)
+let resizePyramid = document.getElementById("size");
+resizePyramid.addEventListener('click', mySize);
+resizePyramid.addEventListener('click', myColor);
+changePyramidColor.addEventListener('click', myColor)
+
 function mySize(){
     let pyramidSize = document.getElementsByTagName("input")[0];
     pyramidSize = pyramidSize.value;
     pyramidSize = parseInt(pyramidSize);
     let clearPyramid = document.getElementById("pyramid");
-    let node = document.getElementById("pyramid2")
+    let node = document.getElementById("pyramid2");
     clearPyramid.removeChild(node);
     let newP2 = document.createElement("div");
     newP2.id = "pyramid2";
     clearPyramid.appendChild(newP2); 
-    return drawPyramid(pyramidSize)
+    return drawPyramid(pyramidSize);
 }
 
 function drawPyramid(height){
@@ -48,8 +55,9 @@ function drawPyramid(height){
         let divSpan = document.createElement("span");
         node.appendChild(divSpan);
         let lineBreak = document.createElement('br');
-        document.getElementById("pyramid2").appendChild(node);
-        document.getElementById('pyramid2').appendChild(lineBreak);
+        pyramidDiv2 = document.getElementById("pyramid2");
+        pyramidDiv2.appendChild(node);
+        pyramidDiv2.appendChild(lineBreak);
     }
     myColor()
 }
@@ -58,7 +66,6 @@ function myColor(){
     let brickColor = document.getElementsByTagName("select")[0];
     brickColor = brickColor.value
     let brickStatus = document.getElementsByClassName("box");
-
     function colorChange(back, border){
         for (i = 0; i < brickStatus.length; i++){
             brickStatus[i].style.backgroundColor = back;
@@ -76,3 +83,4 @@ function myColor(){
         colorChange('#d2691e', '#deb887 black black #deb887' )
     }
 }
+
