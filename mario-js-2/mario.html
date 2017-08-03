@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-   
     <style>
       #pyramid {
         font-family: "Courier New", monospace;
@@ -14,15 +13,15 @@
     <h1>Mario 2</h1>
     <h3>Behold this wonderful pyramid:</h3>
     <div id="inputbox">  
-      <input id="size" type="range" list="range" min="1" max="10" oninput="mySize(); myColor()">
+      <input id="size" type="range" list="range" min="1" max="20" oninput="mySize(); myColor()">
     </div>
     <div id="colorbox">
       <label>Choose a brick color:
       <select size="1" name="brick-color" oninput="myColor()">
           <option value="">Select One …</option>
-          <option value="brown">Brown</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
+          <option value="1">Brown</option>
+          <option value="2">Blue</option>
+          <option value="3">Green</option>
       </select>
     </label>
     </div>

@@ -11,8 +11,8 @@ body{
     text-align: center;
 }
 
-#size{
-    background-color: gray;
+#inputbox{
+    text-align: center;
 }
 #colorbox{
     margin:20px;

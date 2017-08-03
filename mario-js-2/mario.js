@@ -11,9 +11,7 @@ function mySize(){
     newP2.id = "pyramid2";
     clearPyramid.appendChild(newP2); 
     return drawPyramid(pyramidSize)
-    console.log(pyramidSize)
 }
-
 
 function drawPyramid(height){
     let resp = printPyramid(height);
@@ -60,23 +58,21 @@ function myColor(){
     let brickColor = document.getElementsByTagName("select")[0];
     brickColor = brickColor.value
     let brickStatus = document.getElementsByClassName("box");
-    switch(brickColor) {
-    case "blue":
+
+    function colorChange(back, border){
         for (i = 0; i < brickStatus.length; i++){
-            brickStatus[i].style.backgroundColor = '#00008b';
-            brickStatus[i].style.borderColor = '#008b8b black black #008b8b';
+            brickStatus[i].style.backgroundColor = back;
+            brickStatus[i].style.borderColor = border;
         }
+    };  
+    switch(brickColor) {
+    case "2":
+        colorChange('#00008b', '#008b8b black black #008b8b' )
         break;
-    case "green":
-     for (i = 0; i < brickStatus.length; i++){
-            brickStatus[i].style.backgroundColor = '#228b22';
-            brickStatus[i].style.borderColor = '#90ee90 black black #90ee90';
-     }    
+    case "3":
+        colorChange('#228b22', '#90ee90 black black #90ee90' )
         break;
     default:
-         for (i = 0; i < brickStatus.length; i++){
-            brickStatus[i].style.backgroundColor = '#d2691e';
-            brickStatus[i].style.borderColor = '#deb887 black black #deb887';
+        colorChange('#d2691e', '#deb887 black black #deb887' )
     }
-}
 }
